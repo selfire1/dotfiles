@@ -1,0 +1,33 @@
+# repos / cd
+alias blog="cd /Users/joschuag/repos/joschua.io"
+
+# package managers
+# https://github.com/antfu/ni
+alias nd="nr dev"
+alias nb="nr build"
+alias ntd="nr tina:dev"
+
+# git
+alias gaa="git add --all"
+
+alias gm="git merge"
+alias gp="git push"
+alias gl="git pull"
+
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gcd="git checkout develop"
+alias gcm="git checkout main"
+
+alias gcmsg="git commit -m"
+alias gc="git commit"
+
+alias gitopen="gh repo view -w"
+alias gup="git for-each-ref --format='%(refname:short) %(push:track)' refs/heads | grep ahead"
+
+
+# misc
+alias pn="pnpm"
+alias ..="cd .."
+alias ll='ls -alF'
+

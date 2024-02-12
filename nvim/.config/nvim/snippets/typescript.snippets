@@ -1,0 +1,13 @@
+snippet tinaUiLabel
+	ui: {
+		itemProps: (item) => {
+			// Field values are accessed by item?.<Field name>
+			const component = "ContentGroup"
+			if (!item?.heading) {
+				return { label: component};
+			}
+			return { label: \`${component} (${item?.heading})\` };
+		},
+	},
+snippet jsonlog
+	console.log(JSON.stringify($1, null, 1));
