@@ -36,6 +36,7 @@ staged = "＋"
 
 [golang]
 symbol = " "
+disabled = true
 
 [hg_branch]
 symbol = " "
