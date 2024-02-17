@@ -5,6 +5,7 @@ alias blog="cd /Users/joschuag/repos/joschua.io"
 # https://github.com/antfu/ni
 alias nd="nr dev"
 alias nb="nr build"
+alias nt="nr test"
 alias ntd="nr tina:dev"
 
 # git
