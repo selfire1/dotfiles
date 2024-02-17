@@ -1,9 +1,8 @@
 #!/usr/bin/env sh
 
 # --- BEGIN: my config --
-# use the "tiled" layout that we want to try
-# (Default: float, which is "normal" window behavior.)
-yabai -m config layout bsp
+# use stack ("full-screen") layout by default
+yabai -m config layout stack
 
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
@@ -35,6 +34,13 @@ yabai -m rule --add app='Cardhop' manage=off
 yabai -m rule --add app='Fantastical' display=east
 yabai -m rule --add app='Messenger' display=east
 
+# change layout to bsp when display added
+yabai -m signal --add event=display_added \
+  action="yabai -m layout bsp"
+
+# change layout to stack when display removed
+yabai -m signal --add event=display_removed \
+  action="yabai -m layout stack"
 
 # when window is dropped in center of another window, swap them (on edges it will split it)
 # yabai -m mouse_drop_action swap
