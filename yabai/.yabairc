@@ -39,11 +39,11 @@ yabai -m rule --add app='Slack' display=1
 
 # change layout to bsp when display added
 yabai -m signal --add event=display_added \
-  action="yabai -m layout bsp"
+  action="yabai -m space --layout bsp"
 
 # change layout to stack when display removed
 yabai -m signal --add event=display_removed \
-  action="yabai -m layout stack"
+  action="yabai -m space --layout stack"
 
 # when window is dropped in center of another window, swap them (on edges it will split it)
 # yabai -m mouse_drop_action swap
