@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "oven-sh/bun"
+tap "koekeishiya/formulae/yabai"
 
 brew "coreutils"
 brew "curl"
