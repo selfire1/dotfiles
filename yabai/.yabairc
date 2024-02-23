@@ -32,11 +32,11 @@ yabai -m rule --add app='kitty' display=2
 
 # change layout to bsp when display added
 yabai -m signal --add event=display_added \
-  action="yabai -m space --layout bsp"
+  action="yabai -m space 2 --layout bsp"
 
 # change layout to stack when display removed
 yabai -m signal --add event=display_removed \
-  action="yabai -m space --layout stack"
+  action="yabai -m space 1 --layout stack"
 
 yabai -m config mouse_drop_action stack
 
