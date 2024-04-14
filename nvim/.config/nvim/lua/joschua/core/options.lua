@@ -21,7 +21,7 @@ opt.cursorline = true
 
 -- apperance
 opt.termguicolors = true
-opt.background = "light" -- colorschemes that can be light or dark will be made dark
+opt.background = "light" -- colorschemes that can be light or dark will be made light
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- backspace
