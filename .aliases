@@ -20,6 +20,8 @@ alias gcb="git checkout -b"
 alias gcd="git checkout develop"
 alias gcm="git checkout main"
 
+alias gcherry="git cherry-pick"
+
 alias gcmsg="git commit -m"
 alias gc="git commit"
 
