@@ -28,7 +28,6 @@ alias gc="git commit"
 alias gitopen="gh repo view -w"
 alias gup="git for-each-ref --format='%(refname:short) %(push:track)' refs/heads | grep ahead"
 
-
 # misc
 alias pn="pnpm"
 alias ..="cd .."
