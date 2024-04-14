@@ -1,63 +1,38 @@
-vim.o.icm = "split"
+vim.cmd("let g:netrw_liststyle = 3") -- default file explorer displays as tree
 
--- hacky setting via vim
+local opt = vim.opt
 
-vim.cmd([[
-" init.lua: for plugins and keymaps
-" .vimrc: for vim-specific config
+opt.relativenumber = true
+opt.number = true
 
-" https://neovim.io/doc/user/quickref.html#option-list
+-- tabs & indentation
+opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
+opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.expandtab = true -- expand tab to spaces
+opt.autoindent = true -- copy indent from current line when starting new one
 
-" Load plugins
-filetype plugin indent on
+opt.wrap = false
 
-" Search
-set ignorecase 
-set smartcase 
+-- search settings
+opt.ignorecase = true -- ignore case when searching
+opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
-" Tab completion
-set wildmode=list:longest,full
-set wildignore=*.swp,*.o,*.so,*.exe,*.dll
+opt.cursorline = true
 
-" Tab settings
-set ts=2 
-set sw=2 
-set expandtab 
-" set autoindent
+-- apperance
+opt.termguicolors = true
+opt.background = "light" -- colorschemes that can be light or dark will be made dark
+opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
-" Hud
-set termguicolors 
-syntax on
-set ruler " show line number on bar
-set number 
-" set nowrap
-set fillchars=vert:\│
-" set colorcolumn=80
-set cursorline 
-set relativenumber 
-set hidden
-set listchars=tab:»·,trail:·
-set list
-set scrolloff=5
+-- backspace
+opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
-" split windows
-set splitright
-set splitbelow
+-- clipboard
+opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
-" Tags
-set tags=./tags;/,tags;/
+-- split windows
+opt.splitright = true -- split vertical window to the right
+opt.splitbelow = true -- split horizontal window to the bottom
 
-" Backup Directories
-set backupdir=~/.config/nvim/backups,.
-set directory=~/.config/nvim/swaps,.
-if exists('&undodir')
-  set undodir=~/.config/nvim/undo,.
-endif
-
-" system clipboard
-set clipboard=unnamedplus
-
-" zettelkasten highlighting
-hi tkLink ctermfg=Blue cterm=bold,underline guifg=blue gui=bold,underline
-hi tkBrackets ctermfg=gray guifg=gray
-]])
+-- turn off swapfile
+opt.swapfile = false
