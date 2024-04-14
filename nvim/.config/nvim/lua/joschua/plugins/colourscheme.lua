@@ -4,7 +4,6 @@ return {
 	config = function()
 		-- load the colorscheme here
 		vim.cmd([[colorscheme zenbones]])
-		vim.cmd("set background=light")
 	end,
 	dependencies = {
 		"rktjmp/lush.nvim",
