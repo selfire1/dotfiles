@@ -1,4 +1,3 @@
-
 # Functions
 isod() {
   if [ "$1" != "" ] # or better, if [ -n "$1" ]
@@ -7,6 +6,27 @@ isod() {
   else
     date +"%Y-%m-%dT00:00:01+10:00"
   fi
+}
+
+# bash
+gcs() {
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'sites/'; cat; })
+  git checkout "$BRANCH"
+}
+
+gcst() {
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'staging/'; cat; })
+  git checkout "$BRANCH"
+}
+
+gcp() {
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'preview/'; cat; })
+  git checkout "$BRANCH"
+}
+
+gcpd() {
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'production/'; cat; })
+  git checkout "$BRANCH"
 }
 
 # Kitty colour changes
