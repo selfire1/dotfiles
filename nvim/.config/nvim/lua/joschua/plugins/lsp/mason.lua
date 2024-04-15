@@ -25,6 +25,7 @@ return {
 		})
 
 		mason_lspconfig.setup({
+			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 			-- list of servers for mason to install
 			ensure_installed = {
 				"tsserver",
