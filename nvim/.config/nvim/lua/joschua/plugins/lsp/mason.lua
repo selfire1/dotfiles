@@ -33,7 +33,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"astro",
-				"volar",
+				"vuels",
 				"lua_ls",
 				"pyright",
 			},
