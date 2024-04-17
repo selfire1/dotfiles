@@ -32,10 +32,8 @@ return {
 				"html",
 				"cssls",
 				"tailwindcss",
-				"astro",
 				"volar",
 				"lua_ls",
-				"pyright",
 			},
 		})
 
@@ -47,7 +45,7 @@ return {
 				"isort", -- python formatter
 				"black", -- python formatter
 				"pylint", -- python linter
-				"eslint_d", -- js linter
+				"eslint", -- js linter
 			},
 		})
 	end,
