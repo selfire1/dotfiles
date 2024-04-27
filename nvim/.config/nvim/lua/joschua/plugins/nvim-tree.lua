@@ -51,7 +51,9 @@ return {
 				},
 			},
 		})
-		keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+		if not vim.g.shadowvim then
+			keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+		end
 		keymap.set("n", "<leader>fe", ":NvimTreeFindFile<CR>", { desc = "Find file in file explorer" })
 	end,
 }
