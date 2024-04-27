@@ -87,3 +87,18 @@ keymap.set(
 		.. "/content-inventory/00000000-0000-0000-0000-000000000000/content/<c-r>\"'<cr>",
 	{ desc = "Open kontent id in browser" }
 )
+
+-- https://github.com/mickael-menu/ShadowVim
+if vim.g.shadowvim then
+	-- reset focus. when xcode is focused, it captures the hyper key
+	keymap.set("n", "<leader><leader>", ":silent !osascript -e 'tell application \"Arc\" to activate'<cr>")
+
+	-- go to definition
+	keymap.set("n", "gd", "<Cmd>SVPress <LT>C-D-j><CR>")
+
+	-- quick open
+	keymap.set("n", "<leader>ff", "<Cmd>SVPress <LT>D-S-o><CR>")
+
+	-- hide navigator
+	keymap.set("n", "<leader>e", "<Cmd>SVPress <LT>D-0><CR>")
+end
