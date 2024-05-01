@@ -1,5 +1,6 @@
 extends html, javascript, css
 
+priority 3000
 snippet vbase:pp Boilerplate for PixelPixel components
 	<script setup lang="ts">
 	${0}
@@ -8,6 +9,7 @@ snippet vbase:pp Boilerplate for PixelPixel components
 	<template lang="pug">
 	</template>
 
+priority 2000
 snippet propsWithDefaults Set typed props with defaults
 	const props = withDefaults(
 		defineProps<{
@@ -18,6 +20,7 @@ snippet propsWithDefaults Set typed props with defaults
 		}
 	)
 
+priority 2000
 snippet templatePug Template with language Pug
 	<template lang="pug">
 	${0}
@@ -27,13 +30,11 @@ snippet getPage Get the details from the page
 	const { getPage } = usePage();
 	const page = getPage();
 
-snippet interpolate interpolate string
-	`${${0}}`
-
 snippet ContentRenderer
 	ContentRenderer(v-if="getBodyContent(content)" :value="getBodyContent(content)")
 		template(#empty)
 
+priority 3000
 snippet Class
 	class="${0}"
 
@@ -49,6 +50,7 @@ snippet nonBreakingSpace
 snippet Log
 	console.log("debug", ${0})
 
+priority 2000
 snippet tsProps
 	const props = defineProps<{
 			${0}
@@ -82,3 +84,8 @@ snippet usePage Get the details from the page
 	if (!page?.value) {
 		throw createError({ statusCode: 404, message: "Page not found" });
 	}
+
+snippet tsDoc
+	/**
+   * ${0}
+   */
