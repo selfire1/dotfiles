@@ -8,6 +8,8 @@ alias nb="nr build"
 alias nt="nr test"
 alias ntd="nr tina:dev"
 
+alias publish="cd /Users/joschuag/repos/quartz"
+
 # git
 alias gaa="git add --all"
 
