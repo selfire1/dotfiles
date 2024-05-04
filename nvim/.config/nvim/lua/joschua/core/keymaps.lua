@@ -96,6 +96,9 @@ if vim.g.shadowvim then
 	-- go to definition
 	keymap.set("n", "gd", "<Cmd>SVPress <LT>C-D-j><CR>")
 
+	-- center text
+	keymap.set("n", "zz", "<Cmd>SVPress <LT>C-M-S-D-l><CR>")
+
 	-- quick open
 	keymap.set("n", "<leader>ff", "<Cmd>SVPress <LT>D-S-o><CR>")
 
