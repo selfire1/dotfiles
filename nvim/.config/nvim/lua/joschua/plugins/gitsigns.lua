@@ -2,9 +2,6 @@ return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
-		current_line_blame_formatter_opts = {
-			relative_time = true,
-		},
 		on_attach = function(bufnr)
 			local gs = package.loaded.gitsigns
 
