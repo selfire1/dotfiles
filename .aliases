@@ -7,6 +7,7 @@ alias nd="nr dev"
 alias nb="nr build"
 alias nt="nr test"
 alias ntd="nr tina:dev"
+alias nid="ni -D"
 
 alias publish="cd /Users/joschuag/repos/quartz"
 
