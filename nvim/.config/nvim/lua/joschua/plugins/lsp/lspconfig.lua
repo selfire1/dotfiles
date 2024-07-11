@@ -10,6 +10,17 @@ return {
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
+		-- setup swift lsp
+		lspconfig.sourcekit.setup({
+			capabilities = {
+				workspace = {
+					didChangeWatchedFiles = {
+						dynamicRegistration = true,
+					},
+				},
+			},
+		})
+
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
 
