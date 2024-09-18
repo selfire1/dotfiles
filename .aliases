@@ -9,6 +9,8 @@ alias nt="nr test"
 alias ntd="nr tina:dev"
 alias nid="ni -D"
 
+alias version="bun run '/Users/joschuag/repos/scripts (not versioned)/xcode-releases/src/index.ts'"
+
 alias publish="cd /Users/joschuag/repos/quartz"
 
 # git
@@ -23,6 +25,8 @@ alias gcb="git checkout -b"
 alias gcd="git checkout develop"
 alias gcm="git checkout main"
 
+alias grl="git rebase -i @{upstream}"
+
 alias gcherry="git cherry-pick"
 
 alias gcmsg="git commit -m"
@@ -35,4 +39,4 @@ alias gup="git for-each-ref --format='%(refname:short) %(push:track)' refs/heads
 alias pn="pnpm"
 alias ..="cd .."
 alias ll='ls -alF'
-
+alias task="bun run '/Users/joschuag/pixelpixel/utils/clickup-task-done/src/index.ts'"
