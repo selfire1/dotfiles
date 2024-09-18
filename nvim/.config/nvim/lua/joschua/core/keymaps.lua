@@ -76,32 +76,3 @@ keymap.set("n", "<leader><down>", ":resize -5<cr>", { desc = "Decrease window he
 keymap.set("n", "<leader><up>", ":resize +5<cr>", { desc = "Increase window height" })
 
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" })
-
-local secrets = require("joschua.secrets")
-
-keymap.set(
-	"n",
-	"<leader>k",
-	"gg/kontentId<cr>WyW:!open 'https://app.kontent.ai/"
-		.. secrets.kontentId
-		.. "/content-inventory/00000000-0000-0000-0000-000000000000/content/<c-r>\"'<cr>",
-	{ desc = "Open kontent id in browser" }
-)
-
--- https://github.com/mickael-menu/ShadowVim
-if vim.g.shadowvim then
-	-- reset focus. when xcode is focused, it captures the hyper key
-	keymap.set("n", "<leader><leader>", ":silent !osascript -e 'tell application \"Arc\" to activate'<cr>")
-
-	-- go to definition
-	keymap.set("n", "gd", "<Cmd>SVPress <LT>C-D-j><CR>")
-
-	-- center text
-	keymap.set("n", "zz", "<Cmd>SVPress <LT>C-M-S-D-l><CR>")
-
-	-- quick open
-	keymap.set("n", "<leader>ff", "<Cmd>SVPress <LT>D-S-o><CR>")
-
-	-- hide navigator
-	keymap.set("n", "<leader>e", "<Cmd>SVPress <LT>D-0><CR>")
-end
