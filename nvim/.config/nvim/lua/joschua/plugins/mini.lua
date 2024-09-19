@@ -6,5 +6,6 @@ return {
 		require("mini.pairs").setup()
 		require("mini.surround").setup()
 		require("mini.bracketed").setup()
+		require("mini.indentscope").setup()
 	end,
 }
