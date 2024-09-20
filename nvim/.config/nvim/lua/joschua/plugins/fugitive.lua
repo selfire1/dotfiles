@@ -4,6 +4,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 		-- Git keybinds / fugitive keybinds
 		keymap.set("n", "<leader>g", ":G<CR>") -- open Git view
+		keymap.set("n", "<leader>go", ":G<CR>") -- open Git view
 		keymap.set("n", "<leader>gsc", ":Gwrite | :G commit<CR>") -- git stage and commit
 		if vim.g.shadowvim then
 			keymap.set("n", "<leader>gg", "<Cmd>SVPress <LT>D-A-c><CR>") -- git stage and commit
