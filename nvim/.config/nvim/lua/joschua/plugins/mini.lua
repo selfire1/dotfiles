@@ -14,5 +14,10 @@ return {
 		-- Toggle overlay
 		vim.keymap.set("n", "ghp", "<Cmd>lua MiniDiff.toggle_overlay()<CR>")
 		require("mini.jump2d").setup()
+		require("mini.pick").setup()
+		require("mini.extra").setup()
+		vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>")
+		vim.keymap.set("n", "<leader>fs", "<Cmd>Pick grep_live<CR>")
+		vim.keymap.set("n", "<leader>fh", "<Cmd>Pick git_hunks<CR>")
 	end,
 }
