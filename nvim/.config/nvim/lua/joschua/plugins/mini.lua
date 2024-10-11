@@ -13,7 +13,6 @@ return {
 		vim.keymap.set("n", "ghr", "gHgh", { remap = true })
 		-- Toggle overlay
 		vim.keymap.set("n", "ghp", "<Cmd>lua MiniDiff.toggle_overlay()<CR>")
-		require("mini.jump2d").setup()
 		require("mini.pick").setup()
 		require("mini.extra").setup()
 		vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>")
