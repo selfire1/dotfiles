@@ -138,6 +138,20 @@ return {
 			end,
 			["ts_ls"] = function()
 				lspconfig["ts_ls"].setup({
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/@vue/typescript-plugin",
+								languages = { "javascript", "typescript", "vue" },
+							},
+						},
+					},
+					filetypes = {
+						"javascript",
+						"typescript",
+						"vue",
+					},
 					capabilities = capabilities,
 				})
 			end,
