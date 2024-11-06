@@ -31,6 +31,13 @@ return {
 			},
 		},
 	}),
+	keys = {
+		{
+			key = "Enter",
+			mods = "OPT",
+			action = wezterm.action.DisableDefaultAssignment,
+		},
+	},
 	font_size = 13.0,
 	line_height = 1.02,
 	-- theme
