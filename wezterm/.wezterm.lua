@@ -37,6 +37,18 @@ return {
 			mods = "OPT",
 			action = wezterm.action.DisableDefaultAssignment,
 		},
+		{
+			key = "L",
+			mods = "CMD|SHIFT",
+			action = wezterm.action.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
 	},
 	font_size = 13.0,
 	line_height = 1.02,
