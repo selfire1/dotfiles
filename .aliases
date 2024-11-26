@@ -40,3 +40,12 @@ alias pn="pnpm"
 alias ..="cd .."
 alias ll='ls -alF'
 alias task="bun run '/Users/joschuag/pixelpixel/utils/clickup-task-done/src/index.ts'"
+
+# zeit
+alias zf='zeit finish'
+alias ztp='zeit track -p'
+alias zt='zeit track'
+alias zl='zeit list'
+# alias zt='zeit tracking'
+# alias ze="zeit entry \`zeit --no-colors list | tail -1 | awk '{print \$1}'\`"
+# alias zrm="zeit erase \`zeit --no-colors list | tail -1 | awk '{print \$1}'\`"
