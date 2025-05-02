@@ -7,4 +7,5 @@ nvim/.config/nvim/lua/joschua/secrets.lua
 Brewfile.lock.json
 *~
 .git
+git/.gitconfig
 .nvm
