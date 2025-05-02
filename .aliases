@@ -1,5 +1,7 @@
-# repos / cd
-alias blog="cd /Users/joschuag/repos/joschua.io"
+# directory shortcuts / cd
+alias blog="cd /Users/joschuag/Developer/Public/joschua.io/"
+alias publish="cd /Users/joschuag/Developer/Public/quartz/"
+alias dev="cd /Users/joschuag/Developer/"
 
 # package managers
 # https://github.com/antfu/ni
@@ -8,10 +10,10 @@ alias nb="nr build"
 alias nt="nr test"
 alias ntd="nr tina:dev"
 alias nid="ni -D"
+alias pn="pnpm"
 
-alias version="bun run '/Users/joschuag/repos/scripts (not versioned)/xcode-releases/src/index.ts'"
-
-alias publish="cd /Users/joschuag/repos/quartz"
+alias up:nuxt="npx nuxi@latest upgrade --dedupe"
+alias up:all="yarn upgrade-interactive --latest"
 
 # git
 alias gaa="git add --all"
@@ -32,20 +34,20 @@ alias gcherry="git cherry-pick"
 alias gcmsg="git commit -m"
 alias gc="git commit"
 
-alias gitopen="gh repo view -w"
 alias gup="git for-each-ref --format='%(refname:short) %(push:track)' refs/heads | grep ahead"
 
+# github
+alias gitopen="gh repo view -w"
+
+# indie
+alias gin="gh issue create -p 'Indie'"
+alias version="bun run '$HOME/Developer/Scripts/xcode-releases/src/index.ts'"
+
+# work
+alias ppv="bun run '$HOME/pixelpixel/utils/versionupdate-old-boilerplate/index.ts'"
+alias task="bun run '$HOME/pixelpixel/utils/clickup-task-done/src/index.ts'"
+
 # misc
-alias pn="pnpm"
+alias n="nvim"
 alias ..="cd .."
 alias ll='ls -alF'
-alias task="bun run '/Users/joschuag/pixelpixel/utils/clickup-task-done/src/index.ts'"
-
-# zeit
-alias zf='zeit finish'
-alias ztp='zeit track -p'
-alias zt='zeit track'
-alias zl='zeit list'
-# alias zt='zeit tracking'
-# alias ze="zeit entry \`zeit --no-colors list | tail -1 | awk '{print \$1}'\`"
-# alias zrm="zeit erase \`zeit --no-colors list | tail -1 | awk '{print \$1}'\`"
