@@ -76,3 +76,9 @@ keymap.set("n", "<leader><down>", ":resize -5<cr>", { desc = "Decrease window he
 keymap.set("n", "<leader><up>", ":resize +5<cr>", { desc = "Increase window height" })
 
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" })
+
+-- scripts and shortcuts
+keymap.set("n", "<leader>t", ":silent !task<cr>", { desc = "Run `task` command" })
+keymap.set("n", "<leader>ta", ":silent !task --auto<cr>", { desc = "Run `task` command with `auto` flag" })
+keymap.set("n", "<leader>tam", ":silent !task --auto --to=me<cr>", { desc = "Run `task` command with `auto` flag" })
+keymap.set("n", "<leader>taa", ":silent !task --auto --to=alana<cr>", { desc = "Run `task` command with `auto` flag" })
