@@ -127,6 +127,12 @@ return {
 				lspconfig["volar"].setup({
 					capabilities = capabilities,
 					settings = {
+						css = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
 						init_options = {
 							typescript = {
 								tsdk = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib",
@@ -163,6 +169,14 @@ return {
 			["cssls"] = function()
 				lspconfig["cssls"].setup({
 					capabilities = capabilities,
+					settings = {
+						css = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+					},
 				})
 			end,
 			["tailwindcss"] = function()
