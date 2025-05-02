@@ -2,11 +2,11 @@ return {
 	"echasnovski/mini.nvim",
 	version = false, -- `main` branch (recommended)
 	config = function()
-		require("mini.jump").setup()
 		require("mini.surround").setup()
 		require("mini.bracketed").setup()
 		require("mini.indentscope").setup()
 		require("mini.diff").setup()
+		require("mini.jump2d").setup()
 		-- Quickly stage and reset
 		vim.keymap.set("n", "ghs", "ghgh", { remap = true })
 		vim.keymap.set("n", "ghr", "gHgh", { remap = true })
