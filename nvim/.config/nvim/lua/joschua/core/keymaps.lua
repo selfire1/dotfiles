@@ -82,3 +82,24 @@ keymap.set("n", "<leader>t", ":silent !task<cr>", { desc = "Run `task` command" 
 keymap.set("n", "<leader>ta", ":silent !task --auto<cr>", { desc = "Run `task` command with `auto` flag" })
 keymap.set("n", "<leader>tam", ":silent !task --auto --to=me<cr>", { desc = "Run `task` command with `auto` flag" })
 keymap.set("n", "<leader>taa", ":silent !task --auto --to=alana<cr>", { desc = "Run `task` command with `auto` flag" })
+
+local function jump_to_and_top(pattern)
+	local found = vim.fn.search(pattern, "w")
+	if found > 0 then
+		vim.cmd("normal! zt")
+	else
+		print(pattern .. " not found")
+	end
+end
+
+vim.keymap.set("n", "<leader>vt", function()
+	jump_to_and_top("<template.*>")
+end, { desc = "Jump to <template>" })
+
+vim.keymap.set("n", "<leader>vs", function()
+	jump_to_and_top("<script.*>")
+end, { desc = "Jump to <script>" })
+
+vim.keymap.set("n", "<leader>vc", function()
+	jump_to_and_top("<style.*>")
+end, { desc = "Jump to <style>" })
