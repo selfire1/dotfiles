@@ -100,3 +100,4 @@ eval "$(pyenv init --path)"
 #
 # add-zsh-hook chpwd load-nvmrc
 # load-nvmrc
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
