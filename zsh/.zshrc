@@ -1,3 +1,10 @@
+# zsh helper to use goose if you make a typo or just want to yolo into the shell
+command_not_found_handler() {
+  local cmd="$*"
+  echo "🪿:"
+  GOOSE_PROVIDER=ollama GOOSE_MODEL=qwen3-nothink goose run -t "can you try to run this command please: $cmd"
+}
+
 # Functions
 isod() {
   if [ "$1" != "" ] # or better, if [ -n "$1" ]
