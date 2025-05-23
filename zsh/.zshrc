@@ -2,7 +2,7 @@
 command_not_found_handler() {
   local cmd="$*"
   echo "🪿:"
-  GOOSE_PROVIDER=ollama GOOSE_MODEL=qwen3-nothink goose run -t "can you try to run this command please: $cmd"
+  goose run -t "can you try to run this command please: $cmd"
 }
 
 # Functions
