@@ -2,6 +2,7 @@
 alias blog="cd /Users/joschuag/Developer/Public/joschua.io/"
 alias publish="cd /Users/joschuag/Developer/Public/quartz/"
 alias dev="cd /Users/joschuag/Developer/"
+alias gs="goose session"
 
 # package managers
 # https://github.com/antfu/ni
