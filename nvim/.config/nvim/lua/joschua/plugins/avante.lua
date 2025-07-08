@@ -7,6 +7,11 @@ return {
 		gemini = {
 			model = "gemini-2.5-flash-preview-04-17",
 		},
+		windows = {
+			input = {
+				prefix = "》",
+			},
+		},
 	},
 	build = "make",
 	dependencies = {
