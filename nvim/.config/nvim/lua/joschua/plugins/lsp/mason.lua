@@ -32,7 +32,7 @@ return {
 				"html",
 				"cssls",
 				"tailwindcss",
-				"volar",
+				"vue_ls",
 				"lua_ls",
 			},
 		})

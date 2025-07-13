@@ -123,8 +123,8 @@ return {
 					},
 				})
 			end,
-			["volar"] = function()
-				lspconfig["volar"].setup({
+			["vue_ls"] = function()
+				lspconfig["vue_ls"].setup({
 					capabilities = capabilities,
 					settings = {
 						css = {
