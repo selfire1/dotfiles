@@ -106,7 +106,7 @@ return {
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		mason_lspconfig.setup_handlers({
+		mason_lspconfig.setup({
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
 					capabilities = capabilities,
