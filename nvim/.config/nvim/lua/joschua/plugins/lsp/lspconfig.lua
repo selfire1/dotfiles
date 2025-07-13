@@ -106,84 +106,111 @@ return {
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
+		vim.lsp.config("lua_ls", {
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					-- make the language server recognize "vim" global
+					diagnostics = {
+						globals = { "vim", "hs" },
+					},
+					completion = {
+						callSnippet = "Replace",
+					},
+				},
+			},
+		})
+		vim.lsp.config("vue_ls", {
+			capabilities = capabilities,
+			settings = {
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				-- init_options = {
+				-- 	typescript = {
+				-- 		tsdk = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib",
+				-- 	},
+				-- },
+				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			},
+		})
+		-- If you are using mason.nvim, you can get the ts_plugin_path like this
+		-- For Mason v1,
+		-- local mason_registry = require('mason-registry')
+		-- local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+		-- For Mason v2,
+		-- local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
+		-- or even
+		local vue_language_server_path = vim.fn.stdpath("data")
+			.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+		local vue_plugin = {
+			name = "@vue/typescript-plugin",
+			location = vue_language_server_path,
+			languages = { "vue" },
+			configNamespace = "typescript",
+		}
+		vim.lsp.config("vtsls", {
+			settings = {
+				vtsls = {
+					tsserver = {
+						globalPlugins = {
+							vue_plugin,
+						},
+					},
+				},
+			},
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+		})
+		vim.lsp.config("ts_ls", {
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/@vue/typescript-plugin",
+						languages = { "javascript", "typescript", "vue" },
+					},
+				},
+			},
+			filetypes = {
+				"javascript",
+				"typescript",
+				"vue",
+			},
+			capabilities = capabilities,
+		})
+		vim.lsp.config("html", {
+			capabilities = capabilities,
+		})
+		vim.lsp.config("cssls", {
+			capabilities = capabilities,
+			settings = {
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
+		})
+		vim.lsp.config("tailwindcss", {
+			capabilities = capabilities,
+		})
+
 		mason_lspconfig.setup({
-			["lua_ls"] = function()
-				lspconfig["lua_ls"].setup({
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							-- make the language server recognize "vim" global
-							diagnostics = {
-								globals = { "vim", "hs" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				})
-			end,
-			["vue_ls"] = function()
-				lspconfig["vue_ls"].setup({
-					capabilities = capabilities,
-					settings = {
-						css = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-						init_options = {
-							typescript = {
-								tsdk = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib",
-							},
-						},
-						filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-					},
-				})
-			end,
-			["ts_ls"] = function()
-				lspconfig["ts_ls"].setup({
-					init_options = {
-						plugins = {
-							{
-								name = "@vue/typescript-plugin",
-								location = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/@vue/typescript-plugin",
-								languages = { "javascript", "typescript", "vue" },
-							},
-						},
-					},
-					filetypes = {
-						"javascript",
-						"typescript",
-						"vue",
-					},
-					capabilities = capabilities,
-				})
-			end,
-			["html"] = function()
-				lspconfig["html"].setup({
-					capabilities = capabilities,
-				})
-			end,
-			["cssls"] = function()
-				lspconfig["cssls"].setup({
-					capabilities = capabilities,
-					settings = {
-						css = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-					},
-				})
-			end,
-			["tailwindcss"] = function()
-				lspconfig["tailwindcss"].setup({
-					capabilities = capabilities,
-				})
-			end,
+			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+			-- list of servers for mason to install
+			ensure_installed = {
+				"ts_ls",
+				"html",
+				"cssls",
+				"tailwindcss",
+				"vue_ls",
+				"lua_ls",
+			},
+			automatic_installation = true,
 		})
 	end,
 }
