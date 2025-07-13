@@ -4,8 +4,10 @@ return {
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
 		provider = "gemini",
-		gemini = {
-			model = "gemini-2.5-flash-preview-04-17",
+		providers = {
+			gemini = {
+				model = "gemini-2.5-flash-preview-04-17",
+			},
 		},
 		windows = {
 			input = {
