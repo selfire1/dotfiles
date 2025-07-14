@@ -162,7 +162,7 @@ return {
 					},
 				},
 			},
-			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+			filetypes = { "vue" },
 		})
 		vim.lsp.config("ts_ls", {
 			filetypes = {
