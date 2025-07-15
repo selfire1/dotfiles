@@ -92,6 +92,7 @@ local function jump_to_and_top(pattern)
 	end
 end
 
+-- navigating inside of vue
 vim.keymap.set("n", "<leader>vt", function()
 	jump_to_and_top("<template.*>")
 end, { desc = "Jump to <template>" })
