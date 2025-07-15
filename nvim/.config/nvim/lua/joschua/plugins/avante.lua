@@ -1,55 +1,59 @@
 return {
-	"yetone/avante.nvim",
-	event = "VeryLazy",
-	version = false, -- Never set this value to "*"! Never!
+	"olimorris/codecompanion.nvim",
 	opts = {
-		provider = "gemini",
-		providers = {
-			gemini = {
-				model = "gemini-2.5-flash-preview-04-17",
-			},
-		},
-		windows = {
-			input = {
-				prefix = "》",
-			},
-		},
-	},
-	build = "make",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
-		"stevearc/dressing.nvim",
-		"nvim-lua/plenary.nvim",
-		"MunifTanjim/nui.nvim",
-		--- The below dependencies are optional,
-		"echasnovski/mini.pick", -- for file_selector provider mini.pick
-		"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-		"ibhagwan/fzf-lua", -- for file_selector provider fzf
-		"echasnovski/mini.icons",
-		{
-			-- support for image pasting
-			"HakonHarnes/img-clip.nvim",
-			event = "VeryLazy",
-			opts = {
-				-- recommended settings
-				default = {
-					embed_image_as_base64 = false,
-					prompt_for_file_name = false,
-					drag_and_drop = {
-						insert_mode = true,
+		strategies = {
+			chat = {
+				adapter = "gemini",
+				keymaps = {
+					close = {
+						modes = { n = "<C-q>", i = "<C-q>" },
+						opts = {},
 					},
-					-- required for Windows users
-					use_absolute_path = true,
 				},
 			},
-		},
-		{
-			-- Make sure to set this up properly if you have lazy=true
-			"MeanderingProgrammer/render-markdown.nvim",
-			opts = {
-				file_types = { "markdown", "Avante" },
+			inline = {
+				adapter = "gemini",
 			},
-			ft = { "markdown", "Avante" },
+			cmd = {
+				adapter = "gemini",
+			},
+		},
+		adapters = {
+			gemini = function()
+				local keysPath = vim.fn.expand("~/.dotfiles/keys/gemini_api_key.gpg")
+				return require("codecompanion.adapters").extend("gemini", {
+					env = {
+						api_key = "cmd: gpg --batch --quiet --decrypt " .. keysPath,
+					},
+				})
+			end,
 		},
 	},
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-treesitter/nvim-treesitter",
+	},
+	config = function()
+		vim.keymap.set(
+			{ "n", "v" },
+			"<leader>A",
+			"<cmd>CodeCompanionActions<cr>",
+			{ noremap = true, silent = true, desc = "✨ Actions" }
+		)
+		vim.keymap.set(
+			{ "n", "v" },
+			"<leader>a",
+			"<cmd>CodeCompanionChat Toggle<cr>",
+			{ noremap = true, silent = true, desc = "✨ Toggle Chat" }
+		)
+		vim.keymap.set(
+			"v",
+			"<leader>c",
+			"<cmd>CodeCompanionChat Add<cr>",
+			{ noremap = true, silent = true, desc = "✨ Add to Chat" }
+		)
+
+		-- Expand 'cc' into 'CodeCompanion' in the command line
+		vim.cmd([[cab cc CodeCompanion]])
+	end,
 }
