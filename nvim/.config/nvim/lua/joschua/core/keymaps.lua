@@ -103,3 +103,26 @@ end, { desc = "Jump to <script>" })
 vim.keymap.set("n", "<leader>vc", function()
 	jump_to_and_top("<style.*>")
 end, { desc = "Jump to <style>" })
+
+-- ai stuff
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>A",
+	"<cmd>CodeCompanionActions<cr>",
+	{ noremap = true, silent = true, desc = "✨ Actions" }
+)
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>a",
+	"<cmd>CodeCompanionChat Toggle<cr>",
+	{ noremap = true, silent = true, desc = "✨ Toggle Chat" }
+)
+vim.keymap.set(
+	"v",
+	"<leader>c",
+	"<cmd>CodeCompanionChat Add<cr>",
+	{ noremap = true, silent = true, desc = "✨ Add to Chat" }
+)
+
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
