@@ -7,8 +7,6 @@ return {
 		{ "folke/neodev.nvim", opts = {} }, -- improved lua language server when working with nvim config
 	},
 	config = function()
-		-- import lspconfig plugin
-
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
 
@@ -93,7 +91,9 @@ return {
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-		vim.lsp.config("sourcekit", {
+		-- set up sourcekit via lspconfig since it doesn't come bundled with Mason
+		local lspconfig = require("lspconfig")
+		lspconfig.sourcekit.setup({
 			capabilities = capabilities,
 			workspace = {
 				didChangeWatchedFiles = {
