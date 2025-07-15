@@ -13,6 +13,23 @@ return {
 		-- 'none' for no mappings
 		keymap = { preset = "enter" },
 
+		enabled = function()
+			local disabled_for = {
+				filetypes = { gitcommit = true },
+				buftypes = { prompt = true },
+			}
+
+			if
+				disabled_for.filetypes[vim.bo.filetype]
+				or disabled_for.buftypes[vim.bo.buftype]
+				or vim.b.completion == false
+			then
+				return false
+			end
+
+			return true
+		end,
+
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 			-- Adjusts spacing to ensure icons are aligned
