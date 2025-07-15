@@ -1,0 +1,14 @@
+{
+  "todo": {
+    "prefix": "todo",
+    "body": ["// TODO: "]
+  },
+  "fixme": {
+    "prefix": "fixme",
+    "body": ["// FIXME: "]
+  },
+  "viewbuilder": {
+    "prefix": "viewbuilder",
+    "body": ["@ViewBuilder", "private func $1() -> some View {", "", "}"]
+  }
+}

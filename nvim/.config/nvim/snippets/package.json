@@ -1,0 +1,26 @@
+{
+  "name": "personal-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "swift",
+        "path": "./swift.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "javascript",
+          "typescriptreact"
+        ],
+        "path": "./typescript.json"
+      },
+      {
+        "language": [
+          "vue",
+          "typescript"
+        ],
+        "path": "./vue.json"
+      }
+    ]
+  }
+}

@@ -2,30 +2,17 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp", -- connect language servers to completion
+		"saghen/blink.cmp", -- connect language servers to completion
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} }, -- improved lua language server when working with nvim config
 	},
 	config = function()
 		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-
-		-- setup swift lsp
-		lspconfig.sourcekit.setup({
-			capabilities = {
-				workspace = {
-					didChangeWatchedFiles = {
-						dynamicRegistration = true,
-					},
-				},
-			},
-		})
 
 		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
 
 		-- import cmp-nvim-lsp plugin
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -104,7 +91,16 @@ return {
 		})
 
 		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+		vim.lsp.config("sourcekit", {
+			capabilities = capabilities,
+			workspace = {
+				didChangeWatchedFiles = {
+					dynamicRegistration = true,
+				},
+			},
+		})
 
 		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
@@ -120,23 +116,23 @@ return {
 				},
 			},
 		})
-		vim.lsp.config("vue_ls", {
-			capabilities = capabilities,
-			settings = {
-				css = {
-					validate = true,
-					lint = {
-						unknownAtRules = "ignore",
-					},
-				},
-				-- init_options = {
-				-- 	typescript = {
-				-- 		tsdk = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib",
-				-- 	},
-				-- },
-				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-			},
-		})
+		-- vim.lsp.config("vue_ls", {
+		-- 	capabilities = capabilities,
+		-- 	settings = {
+		-- 		css = {
+		-- 			validate = true,
+		-- 			lint = {
+		-- 				unknownAtRules = "ignore",
+		-- 			},
+		-- 		},
+		-- 		-- init_options = {
+		-- 		-- 	typescript = {
+		-- 		-- 		tsdk = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib",
+		-- 		-- 	},
+		-- 		-- },
+		-- 		filetypes = { "vue" },
+		-- 	},
+		-- })
 		local vue_language_server_path = vim.fn.stdpath("data")
 			.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 		local vue_plugin = {
@@ -186,12 +182,12 @@ return {
 			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 			-- list of servers for mason to install
 			ensure_installed = {
+				"lua_ls",
+				"vtsls",
 				"ts_ls",
 				"html",
 				"cssls",
 				"tailwindcss",
-				"vue_ls",
-				"lua_ls",
 			},
 			automatic_installation = true,
 		})

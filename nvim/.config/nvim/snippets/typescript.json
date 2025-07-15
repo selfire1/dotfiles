@@ -1,0 +1,10 @@
+{
+  "tsDoc": {
+    "prefix": "tsDoc",
+    "body": ["/**", "* $1", "*/"]
+  },
+  "fixrm": {
+    "prefix": "fixrm",
+    "body": ["// FIXME: remove"]
+  }
+}

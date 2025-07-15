@@ -1,0 +1,144 @@
+{
+  "vbase:pp": {
+    "prefix": "vbase:pp",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "\t$0",
+      "</script>",
+      "",
+      "<template lang=\"pug\">",
+      "</template>"
+    ],
+    "description": "Boilerplate for PixelPixel components"
+  },
+  "propsWithDefaults": {
+    "prefix": "propsWithDefaults",
+    "body": [
+      "const props = withDefaults(",
+      "\tdefineProps<{",
+      "\t\t$0",
+      "\t}>(),",
+      "\t{",
+      "\t\t",
+      "\t}",
+      ")"
+    ],
+    "description": "Set typed props with defaults"
+  },
+  "templatePug": {
+    "prefix": "templatePug",
+    "body": ["<template lang=\"pug\">", "$0", "</template>"],
+    "description": "Template with language Pug"
+  },
+  "getPage": {
+    "prefix": "getPage",
+    "body": ["const { getPage } = usePage();", "const page = getPage();"],
+    "description": "Get the details from the page"
+  },
+  "ContentRenderer": {
+    "prefix": "ContentRenderer",
+    "body": [
+      "ContentRenderer(v-if=\"getBodyContent(content)\" :value=\"getBodyContent(content)\")",
+      "\ttemplate(#empty)"
+    ],
+    "description": "ContentRenderer component"
+  },
+  "Class": {
+    "prefix": "Class",
+    "body": ["class=\"$0\""],
+    "description": "Add class attribute"
+  },
+  "asyncQueryContent": {
+    "prefix": "asyncQueryContent",
+    "body": [
+      "const { data: ${1:data} } = await useAsyncData(\"${2:key}\", () => queryContent(\"/${3:path}\").find());"
+    ],
+    "description": "Async query content"
+  },
+  "standardSpace": {
+    "prefix": "standardSpace",
+    "body": ["&#32;"],
+    "description": "Standard space"
+  },
+  "nonBreakingSpace": {
+    "prefix": "nonBreakingSpace",
+    "body": ["&nbsp;"],
+    "description": "Non-breaking space"
+  },
+  "Log": {
+    "prefix": "Log",
+    "body": ["console.log(\"debug\", $0)"],
+    "description": "console.log with label 'debug'"
+  },
+  "tsProps": {
+    "prefix": "tsProps",
+    "body": ["const props = defineProps<$0>()"],
+    "description": "Typed defineProps"
+  },
+  "vbase:typed": {
+    "prefix": "vbase:typed",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import type { $TM_FILENAME } from \"@/types/components/$TM_FILENAME\";",
+      "const props = defineProps<$TM_FILENAME>()",
+      "</script>",
+      "",
+      "<template lang=\"pug\">",
+      ".bg-red-200.$TM_FILENAME.debug(data-component=\"$TM_FILENAME\")",
+      "\tpre.text-sm {{ props }}",
+      "</template>"
+    ],
+    "description": "Typed component boilerplate"
+  },
+  "useProse": {
+    "prefix": "useProse",
+    "body": ["const { getBodyContent } = useProse();"],
+    "description": "useProse utility"
+  },
+  "clog": {
+    "prefix": "clog",
+    "body": ["console.log($0)"],
+    "description": "console.log shorthand"
+  },
+  "usePage": {
+    "prefix": "usePage",
+    "body": [
+      "import { stripTrailingSlash } from \"~/utilities\";",
+      "const route = useRoute()",
+      "",
+      "const { data: page } = await useAsyncData(\"page-\" + stripTrailingSlash(route.path), () =>",
+      "\tqueryContent(stripTrailingSlash(route.path)).findOne(),",
+      ");",
+      "",
+      "if (!page?.value) {",
+      "\tthrow createError({ statusCode: 404, message: \"Page not found\" });",
+      "}"
+    ],
+    "description": "Fetch page content"
+  },
+  "tsDoc": {
+    "prefix": "tsDoc",
+    "body": ["/**", " * $0", " */"],
+    "description": "TypeScript doc comment"
+  },
+  "vfortemplate": {
+    "prefix": "vfortemplate",
+    "body": ["template(v-for=\"(item, index) in $0\" :key='')"],
+    "description": "v-for template"
+  },
+  "viftemplate": {
+    "prefix": "viftemplate",
+    "body": ["template(v-if=\"$0\")"],
+    "description": "v-if template"
+  },
+  "todo": {
+    "prefix": "todo",
+    "body": ["TODO:"],
+    "description": "TODO comment"
+  },
+  "fixrm": {
+    "prefix": "fixrm",
+    "body": ["// FIXME: remove"],
+    "description": "FIXME remove"
+  }
+}
