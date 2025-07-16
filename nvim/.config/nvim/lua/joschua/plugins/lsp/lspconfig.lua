@@ -116,23 +116,6 @@ return {
 				},
 			},
 		})
-		-- vim.lsp.config("vue_ls", {
-		-- 	capabilities = capabilities,
-		-- 	settings = {
-		-- 		css = {
-		-- 			validate = true,
-		-- 			lint = {
-		-- 				unknownAtRules = "ignore",
-		-- 			},
-		-- 		},
-		-- 		-- init_options = {
-		-- 		-- 	typescript = {
-		-- 		-- 		tsdk = "/Users/joschuag/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib",
-		-- 		-- 	},
-		-- 		-- },
-		-- 		filetypes = { "vue" },
-		-- 	},
-		-- })
 		local vue_language_server_path = vim.fn.stdpath("data")
 			.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 		local vue_plugin = {
