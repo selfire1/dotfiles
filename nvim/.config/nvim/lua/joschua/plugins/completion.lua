@@ -15,7 +15,7 @@ return {
 
 		enabled = function()
 			local disabled_for = {
-				filetypes = { gitcommit = true },
+				filetypes = { gitcommit = true, DressingInput = true },
 				buftypes = { prompt = true },
 			}
 
