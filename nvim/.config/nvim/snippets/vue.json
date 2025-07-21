@@ -140,5 +140,12 @@
     "prefix": "fixrm",
     "body": ["// FIXME: remove"],
     "description": "FIXME remove"
+  },
+  "useApiAsyncData": {
+    "prefix": "useApiAsyncData",
+    "body": [
+      "const { api} = useApi()",
+      "const { data: ${2:data} } = await useAsyncData(`${1}`, () => api(`${1}`))"
+    ]
   }
 }
