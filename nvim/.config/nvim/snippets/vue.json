@@ -123,7 +123,7 @@
   },
   "vfortemplate": {
     "prefix": "vfortemplate",
-    "body": ["template(v-for=\"(item, index) in $0\" :key='')"],
+    "body": ["template(v-for=\"$1 in $0\" :key='$1.id')"],
     "description": "v-for template"
   },
   "viftemplate": {
