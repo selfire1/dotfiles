@@ -147,5 +147,15 @@
       "const { api} = useApi()",
       "const { data: ${2:data} } = await useAsyncData(`${1}`, () => api(`${1}`))"
     ]
+  },
+  "useAsyncData": {
+    "prefix": "useAsyncData",
+    "body": [
+      "const { data, status, error  } = await useAsyncData(`${1}`, ${2} )"
+    ]
+  },
+  "nuxtuiImport": {
+    "prefix": "nuxtuiImport",
+    "body": ["import type { ${1} } from '@nuxt/ui'"]
   }
 }
