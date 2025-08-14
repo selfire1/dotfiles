@@ -191,6 +191,16 @@ return {
 		vim.lsp.config("tailwindcss", {
 			capabilities = capabilities,
 		})
+		vim.lsp.config("eslint", {
+			settings = {
+				rulesCustomizations = {
+					{
+						rule = "@stylistic/*",
+						severity = "off",
+					},
+				},
+			},
+		})
 
 		mason_lspconfig.setup({
 			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
