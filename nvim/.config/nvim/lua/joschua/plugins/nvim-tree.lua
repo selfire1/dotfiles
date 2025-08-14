@@ -25,7 +25,10 @@ return {
 
 		nvimtree.setup({
 			view = {
-				width = 35,
+				width = {
+					min = 35,
+					max = -1,
+				},
 				relativenumber = true,
 			},
 			filters = {
