@@ -24,7 +24,7 @@ return {
 				swift = { "swiftformat" },
 			},
 			format_on_save = {
-				lsp_format = "prefer",
+        lsp_format = "fallback",
 				async = false,
 				timeout_ms = 3000,
 			},
