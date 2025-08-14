@@ -6,12 +6,12 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			javascript = { "eslint" },
-			typescript = { "eslint" },
-			vue = { "eslint" },
-			javascriptreact = { "eslint" },
-			typescriptreact = { "eslint" },
-			svelte = { "eslint" },
+			javascript = {},
+			typescript = {},
+			vue = {},
+			javascriptreact = {},
+			typescriptreact = {},
+			svelte = {},
 			python = { "pylint" },
 			swift = { "swiftlint" },
 		}
