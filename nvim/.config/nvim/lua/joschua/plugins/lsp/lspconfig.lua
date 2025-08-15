@@ -198,6 +198,14 @@ return {
 						rule = "@stylistic/*",
 						severity = "off",
 					},
+					{
+						rule = "vue/return-in-computed-property",
+						severity = "warn",
+					},
+					{
+						rule = "vue/block-tag-newline",
+						severity = "warn",
+					},
 				},
 			},
 		})
