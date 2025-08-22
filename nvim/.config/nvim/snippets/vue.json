@@ -160,13 +160,26 @@
   },
   "trycatchfinally": {
     "prefix": "trycatchfinally",
-    "body": ["try { $1 } catch (error) { $2 } finally { $3 }"]
+    "body": [
+      "try {",
+        "$1",
+        "} catch (error) {",
+        "$2",
+        "} finally {",
+        "$3",
+      "}"]
   },
   "trycatchpending": {
     "prefix": "trycatchpending",
     "body": [
       "is$1Pending.value = true",
-      "try { $1 } catch (error) { $2 } finally { is$1Pending.value = false }"
+      "try {",
+        "$2",
+        "} catch (error) {",
+        "$3",
+        "} finally {",
+        "is$1Pending.value = false",
+      "}"
     ]
   }
 }
