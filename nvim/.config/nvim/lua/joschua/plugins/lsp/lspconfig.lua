@@ -217,6 +217,7 @@ return {
 				"lua_ls",
 				"vtsls",
 				"vue_ls",
+				"astro",
 				"html",
 				"cssls",
 				"tailwindcss",
