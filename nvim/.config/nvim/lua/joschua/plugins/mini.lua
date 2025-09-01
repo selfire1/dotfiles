@@ -15,6 +15,7 @@ return {
 		require("mini.pick").setup()
 		require("mini.extra").setup()
 		vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<CR>")
+		vim.keymap.set("n", "<leader>fb", "<Cmd>Pick buffers<CR>")
 		vim.keymap.set("n", "<leader>fs", "<Cmd>Pick grep_live<CR>")
 		vim.keymap.set("n", "<leader>fh", "<Cmd>Pick git_hunks<CR>")
 
