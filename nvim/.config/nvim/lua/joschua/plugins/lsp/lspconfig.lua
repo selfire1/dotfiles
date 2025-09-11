@@ -209,12 +209,21 @@ return {
 				},
 			},
 		})
+		vim.lsp.config("svelte", {
+			capabilities = capabilities,
+		})
+
+		vim.lsp.config("emmet_language_server", {
+			capabilities = capabilities,
+		})
 
 		mason_lspconfig.setup({
 			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 			-- list of servers for mason to install
 			ensure_installed = {
+				"emmet_language_server",
 				"lua_ls",
+				"svelte",
 				"vtsls",
 				"vue_ls",
 				"astro",
