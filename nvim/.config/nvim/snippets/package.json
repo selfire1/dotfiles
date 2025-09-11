@@ -20,6 +20,13 @@
           "typescript"
         ],
         "path": "./vue.json"
+      },
+      {
+        "language": [
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "path": "./react.json"
       }
     ]
   }
