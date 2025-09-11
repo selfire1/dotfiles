@@ -6,6 +6,14 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+			formatters = {
+				prettier = {
+					require_cwd = true,
+				},
+				eslint_d = {
+					require_cwd = true,
+				},
+			},
 			formatters_by_ft = {
 				vue = { "eslint_d" },
 				javascript = { "eslint_d" },
