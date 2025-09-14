@@ -11,21 +11,19 @@
       "    $2",
       "  )",
       "}"
-    ],
+    ]
   },
-    "React component": {
+  "React component": {
     "prefix": "component",
-    "body": 
-[
-    "export default function $1() {",
-    "  return (",
-    "    <>",
-    "    </>",
-    "  )",
-    "}",
-    ""
-
-    ],
+    "body": [
+      "export default function $1() {",
+      "  return (",
+      "    <>",
+      "      <pre>$1</pre>$2",
+      "    </>",
+      "  )",
+      "}",
+      ""
+    ]
   }
-
 }
