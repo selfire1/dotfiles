@@ -1,7 +1,6 @@
 # Functions
 isod() {
-  if [ "$1" != "" ] # or better, if [ -n "$1" ]
-  then
+  if [ "$1" != "" ]; then # or better, if [ -n "$1" ]
     date -j -f "%Y%m%d" "$1" +'%Y-%m-%dT00:00:01+10:00'
   else
     date +"%Y-%m-%dT00:00:01+10:00"
@@ -10,22 +9,34 @@ isod() {
 
 # bash
 gcs() {
-  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'sites/'; cat; })
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | {
+    echo -n 'sites/'
+    cat
+  })
   git checkout "$BRANCH"
 }
 
 gcst() {
-  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'staging/'; cat; })
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | {
+    echo -n 'staging/'
+    cat
+  })
   git checkout "$BRANCH"
 }
 
 gcp() {
-  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'preview/'; cat; })
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | {
+    echo -n 'preview/'
+    cat
+  })
   git checkout "$BRANCH"
 }
 
 gcpd() {
-  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | { echo -n 'production/'; cat; })
+  BRANCH=$(git symbolic-ref --short HEAD | sed -E 's/.*\///' | {
+    echo -n 'production/'
+    cat
+  })
   git checkout "$BRANCH"
 }
 
@@ -44,7 +55,6 @@ source $HOME/.aliases
 export ZEIT_DB=~/.config/zeit.db
 export EDITOR=nvim
 
-
 # brew autocompletions
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
@@ -61,7 +71,7 @@ export STARSHIP_CONFIG=~/.dotfiles/zsh/starship.toml
 eval "$(/opt/homebrew/bin/starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"                                       # This loads nvm
 [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # node
@@ -70,7 +80,7 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 # export NODE_PATH=$NODE_PATH:`npm root -g`
 
 # Python
-eval "$(pyenv init --path)" 
+eval "$(pyenv init --path)"
 
 # tabtab source for packages
 # uninstall by removing these lines
