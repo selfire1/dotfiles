@@ -46,10 +46,6 @@ alias gitopen="gh repo view -w"
 alias gin="gh issue create -p 'Indie'"
 alias version="bun run '$HOME/Developer/Scripts/xcode-releases/src/index.ts'"
 
-# work
-alias ppv="bun run '$HOME/pixelpixel/utils/versionupdate-old-boilerplate/index.ts'"
-alias task="bun run '$HOME/pixelpixel/utils/clickup-task-done/src/index.ts'"
-
 # misc
 alias n="nvim"
 alias ..="cd .."
