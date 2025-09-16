@@ -40,14 +40,6 @@ gcpd() {
   git checkout "$BRANCH"
 }
 
-# Kitty colour changes
-dark() {
-  kitty @ set-colors -ac "~/.dotfiles/kitty/.config/kitty/zenbones_dark.conf"
-}
-light() {
-  kitty @ set-colors -ac "~/.dotfiles/kitty/.config/kitty/zenbones_light.conf"
-}
-
 # Source
 export PATH=/opt/homebrew/bin:$PATH
 eval $(/opt/homebrew/bin/brew shellenv)
@@ -77,8 +69,6 @@ export NVM_DIR="$HOME/.nvm"
 # node
 export NODE_OPTIONS="--max-old-space-size=8192"
 
-# export NODE_PATH=$NODE_PATH:`npm root -g`
-
 # Python
 eval "$(pyenv init --path)"
 
@@ -86,29 +76,5 @@ eval "$(pyenv init --path)"
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
-# # place this after nvm initialization!
-# autoload -U add-zsh-hook
-#
-# load-nvmrc() {
-#   local nvmrc_path
-#   nvmrc_path="$(nvm_find_nvmrc)"
-#
-#   if [ -n "$nvmrc_path" ]; then
-#     local nvmrc_node_version
-#     nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-#
-#     if [ "$nvmrc_node_version" = "N/A" ]; then
-#       nvm install
-#     elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-#       nvm use
-#     fi
-#   elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-#     echo "Reverting to nvm default version"
-#     nvm use default
-#   fi
-# }
-#
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export TERM=xterm-256color
