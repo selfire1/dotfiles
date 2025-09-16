@@ -1,0 +1,43 @@
+[user]
+	name = Joschua
+	email = 70809675+selfire1@users.noreply.github.com
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[init]
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[rerere]
+  enabled = true
+  autoupdate = true
+[core]
+  excludesfile = ~/.gitignore
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+[merge]
+  conflictstyle = zdiff3
