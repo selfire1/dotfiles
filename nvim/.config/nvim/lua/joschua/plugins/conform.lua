@@ -30,6 +30,8 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				swift = { "swiftformat" },
+				bash = { "shfmt" },
+				zsh = { "shfmt" },
 			},
 			format_on_save = {
 				-- lsp_format = "prefer",

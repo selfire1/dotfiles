@@ -36,6 +36,8 @@ return {
 				"stylua",
 				-- swift
 				"swiftlint",
+				-- other
+				"shfmt",
 			},
 		})
 	end,
